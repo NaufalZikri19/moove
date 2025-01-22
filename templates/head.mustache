@@ -102,6 +102,7 @@
             border: 1px solid #D4D4D4;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         footer {
             background-color: #f8f9fa;
@@ -111,7 +112,7 @@
             display: flex; /* Flexbox diterapkan pada induk */
             flex-direction: column; /* Elemen ditata secara vertikal */
             justify-content: space-between; /* Menyebarkan elemen ke atas dan bawah */
-            height: 100%; /* Pastikan tinggi induk penuh */
+            height: auto; /* Pastikan tinggi induk penuh */
         }
 
         .card-body {
@@ -119,8 +120,21 @@
         }
 
         .row {
-            margin-bottom: 0; /* Pastikan tidak ada jarak ke bawah */
-            flex-grow: 0; /* Pastikan elemen tidak meluas */
+            justify-content: space-between;
+            margin-bottom: ; /* Pastikan tidak ada jarak ke bawah */
+            flex-grow: ; /* Pastikan elemen tidak meluas */
+        }
+
+        .row .item{
+            width: 250px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+            border: 1px solid #D4D4D4;
+            display: block;
+            align-items: center;
+            text-align: center;
         }
     </style>
 </head>
