@@ -32,180 +32,70 @@
     }
 }}
 
-<footer id="page-footer">
-    <div class="moove-container-fluid footer-columns">
-        <div class="row">
-            <div class="col-md-4 column-left">
-                <div class="contact">
-                    <h3 class="footer-title">{{#str}}contactus, theme_moove{{/str}}</h3>
-
-                    <ul>
-                        {{#website}}
-                            <li>
-                                <a href="{{{website}}}" target="_blank" class="website btn btn-link">
-                                    <i class="fa fa-globe"></i>
-                                </a>
-                            </li>
-                        {{/website}}
-                        {{#mobile}}
-                            <li>
-                                <a href="tel:{{{mobile}}}" target="_blank" class="mobile btn btn-link">
-                                    <i class="fa fa-phone"></i>
-                                </a>
-                            </li>
-                        {{/mobile}}
-                        {{#mail}}
-                            <li>
-                                <a href="mailto:{{{mail}}}" target="_blank" class="mail btn btn-link">
-                                    <i class="fa fa-envelope"></i>
-                                </a>
-                            </li>
-                        {{/mail}}
-                    </ul>
+<footer style="padding: 80px 24px 24px; gap: 28px;">
+    <div style="display: flex; gap: 48px;">
+        <div style="display: flex; gap: 48px;">
+            <div style="flex: 0 1 auto; flex-direction: column; display: flex; gap: 16px; width: 301px; margin: 0 auto;">
+                {{# output.should_display_logo }}
+                <img src="{{ output.get_logo }}" class="logo mr-1" alt="{{ sitename }}" style="width: 47px; height: auto;">
+                {{/ output.should_display_logo }}
+                <div style="font-size: 24px; font-weight: 700; line-height: 29.05px; letter-spacing: 0.005em;">Unlock New Skills, Earn Achievements, and Grow with Every Lesson.</div>
+                <div style="font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: 0.005em; color: #737373;">{{{ sitename }}}, <span class="current-year"></span></div>
+            </div>
+        </div>
+        <div class="d-flex" style="gap: 74px; flex: 1 1 auto; justify-content: flex-end;">
+            <div>
+                <div class="fw-bold" style="font-size: 18px; margin: 0px 0px 24px">
+                    Info
                 </div>
-
-                <div class="socialnetworks">
-                    <h3 class="footer-title">{{#str}}followus, theme_moove{{/str}}</h3>
-
-                    <ul class="mb-0">
-                        {{#facebook}}
-                            <li>
-                                <a href="{{{facebook}}}" target="_blank" class="facebook btn btn-link btn-rounded">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                            </li>
-                        {{/facebook}}
-
-                        {{#twitter}}
-                            <li>
-                                <a href="{{{twitter}}}" target="_blank" class="twitter btn btn-link btn-rounded">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </li>
-                        {{/twitter}}
-
-                        {{#linkedin}}
-                            <li>
-                                <a href="{{{linkedin}}}" target="_blank" class="linkedin btn btn-link btn-rounded">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </li>
-                        {{/linkedin}}
-
-                        {{#youtube}}
-                            <li>
-                                <a href="{{{youtube}}}" target="_blank" class="youtube btn btn-link btn-rounded">
-                                    <i class="fa fa-youtube"></i>
-                                </a>
-                            </li>
-                        {{/youtube}}
-
-                        {{#instagram}}
-                            <li>
-                                <a href="{{{instagram}}}" target="_blank" class="instagram btn btn-link btn-rounded">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                            </li>
-                        {{/instagram}}
-
-                        {{#whatsapp}}
-                            <li>
-                                <a href="https://api.whatsapp.com/send?phone={{{whatsapp}}}" target="_blank" class="whatsapp btn btn-link btn-rounded">
-                                    <i class="fa fa-whatsapp"></i>
-                                </a>
-                            </li>
-                        {{/whatsapp}}
-
-                        {{#telegram}}
-                            <li>
-                                <a href="{{{telegram}}}" target="_blank" class="telegram btn btn-link btn-rounded">
-                                    <i class="fa fa-telegram"></i>
-                                </a>
-                            </li>
-                        {{/telegram}}
-                    </ul>
+                <div style="font-size: 16px; font-weight: 500; line-height: 24px; color: #737373; display: flex; flex-direction: column; gap: 16px;">
+                    <div>FAQ’s</div>
+                    <div>Contact</div>
                 </div>
             </div>
-            <div class="col-md-4 column-center">
-                {{# output.supportemail }}
-                    <div class="supportemail">{{{ output.supportemail }}}</div>
-                {{/ output.supportemail }}
-
-                {{{ output.login_info }}}
-
-                {{{ output.standard_footer_html }}}
-
-                <div class="tool_usertours-resettourcontainer"></div>
+            <div>
+                <div class="fw-bold" style="font-size: 18px; margin: 0px 0px 24px">
+                    Legal
+                </div>
+                <div style="font-size: 16px; font-weight: 500; line-height: 24px; color: #737373; display: flex; flex-direction: column; gap: 16px;">
+                    <div>Terms of Service</div>
+                    <div>Privacy Policy</div>
+                </div>
             </div>
-            <div class="col-md-4 column-right">
-                {{#enablemobilewebservice}}
-                    {{#mobilesetuplink}}
-                        <a href="{{{mobilesetuplink}}}">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</a>
-                    {{/mobilesetuplink}}
-                    {{^mobilesetuplink}}
-                        <h3 class="footer-title">{{#str}}getmoodleonyourmobile, tool_mobile{{/str}}</h3>
-                    {{/mobilesetuplink}}
-                    <div class="stores">
-                        {{#androidappid}}
-                            <a href="https://play.google.com/store/apps/details?id={{androidappid}}">
-                                <img src="{{config.wwwroot}}/theme/moove/pix/store_google.svg" alt="Play Store">
-                            </a>
-                        {{/androidappid}}
-                        {{#iosappid}}
-                            <a class="mt-1" href="https://apps.apple.com/app/id{{iosappid}}">
-                                <img src="{{config.wwwroot}}/theme/moove/pix/store_apple.svg" alt="App Store">
-                            </a>
-                        {{/iosappid}}
-                    </div>
-                {{/enablemobilewebservice}}
+            <div>
+                <div class="fw-bold" style="font-size: 18px; margin: 0px 0px 24px">
+                    Social
+                </div>
+                <div style="font-size: 16px; font-weight: 500; line-height: 24px; color: #737373; display: flex; flex-direction: column; gap: 16px;">
+                    <div>Instagram</div>
+                    <div>Tiktok</div>
+                    <div>Youtube</div>
+                    <div>LinkedIn</div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="footer-content-debugging footer-dark bg-dark text-light">
-        <div class="moove-container-fluid footer-dark-inner">
-            {{{ output.debug_footer_html }}}
+    <hr class="hr" />
+    <div style="display: flex; gap: 48px;">
+        <div style="flex: 0 1 auto; width: 252px; margin: 0 auto;">
+            <div style="font-size: 14px; font-weight: 500; line-height: 20px; letter-spacing: 0.005em; color: #A3A3A3;"><span class="current-year"></span> {{{ sitename }}} All rights reserved</div>
         </div>
-    </div>
-
-    <div data-region="footer-container-popover">
-        {{#output.has_communication_links}}
-            <button onclick="window.open('{{output.communication_url}}', '_blank', 'noreferrer')" class="btn btn-icon bg-primary text-white icon-no-margin btn-footer-communication" aria-label="{{#str}}communicationroomlink, course{{/str}}">
-                {{#pix}}t/messages-o, core{{/pix}}
-            </button>
-        {{/output.has_communication_links}}
-        <button class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover" aria-label="{{#str}}showfooter, theme_boost{{/str}}">
-            {{#pix}}e/question, core{{/pix}}
-        </button>
-    </div>
-    <div class="footer-content-popover container" data-region="footer-content-popover">
-        {{# output.has_popover_links }}
-            <div class="footer-section p-3 border-bottom">
-                {{# output.page_doc_link }}
-                    <div>{{{ output.page_doc_link }}}</div>
-                {{/ output.page_doc_link }}
-
-                {{# output.services_support_link }}
-                    <div>{{{ output.services_support_link }}}</div>
-                {{/ output.services_support_link }}
+        <div class="d-flex" style="gap: 36px; flex: 1 1 auto; justify-content: flex-end;">
+            <div>
+                <a href="#" role="button">
+                    <img src="theme/moove/pix/ig.png" style="width: 36px; height: auto;">
+                </a>
             </div>
-        {{/ output.has_popover_links }}
-        <div class="footer-section p-3">
-            <div>{{#str}}poweredbymoodle, core{{/str}}</div>
-            {{#output.moodle_release}}
-                <div>
-                    {{#str}}version, core{{/str}} {{{ output.moodle_release }}}
-                </div>
-            {{/output.moodle_release}}
-        </div>
-    </div>
-
-    <div class="copyright">
-        <div class="madeby">
-            <p>{{#str}}themedevelopedby, theme_moove{{/str}}</p>
-            <a href="https://conecti.me">
-                <img src="{{config.wwwroot}}/theme/moove/pix/logo_conectime.svg" alt="Conecti.me" style="height: 40px;">
-            </a>
+            <div>
+                <a href="#" role="button">
+                    <img src="theme/moove/pix/tt.png" style="width: 36px; height: auto;">
+                </a>
+            </div>
+            <div>
+                <a href="#" role="button">
+                    <img src="theme/moove/pix/yt.png" style="width: 36px; height: auto;">
+                </a>
+            </div>
         </div>
     </div>
 </footer>
@@ -215,5 +105,11 @@
 {{#js}}
     require(['theme_boost/footer-popover'], function(FooterPopover) {
         FooterPopover.init();
+        const currentYear = new Date().getFullYear();
+        const yearElements = document.querySelectorAll('.current-year');
+        yearElements.forEach(function(element) {
+            element.textContent = currentYear;
+        });
     });
+    
 {{/js}}
