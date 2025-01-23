@@ -94,15 +94,10 @@
 }}
 <div class="loginform row {{#hastwocolumns}}hastwocolumns{{/hastwocolumns}}">
     <div class="{{#hastwocolumns}}col-lg-6 col-md-12 left-column{{/hastwocolumns}}{{^hastwocolumns}}col{{/hastwocolumns}}">
-        {{#logourl}}
-            <div id="loginlogo" class="login-logo">
-                <img id="logoimage" src="{{logourl}}" class="img-fluid" alt="{{sitename}}"/>
-                <h1 class="login-heading sr-only">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
-            </div>
-        {{/logourl}}
-        {{^logourl}}
-            <h1 class="login-heading mb-4">{{#str}} loginto, core, {{sitename}} {{/str}}</h1>
-        {{/logourl}}
+        <div class="text-center" style="margin-bottom: 48px;"> 
+            <h2 class="text-sm fw-bold">Welcome, Knowledge Explorer👋</h2>
+            <h5 class="card-text text-sm" style="color: #737373;">Step Into the World of Learning – Explore, Discover, Achieve.</h5>
+        </div>
         {{#maintenance}}
             <div class="alert alert-danger login-maintenance">
                 {{{maintenance}}}
@@ -122,7 +117,8 @@
 
         <form class="login-form" action="{{loginurl}}" method="post" id="login">
             <input type="hidden" name="logintoken" value="{{logintoken}}">
-            <div class="login-form-username form-group">
+            <label class="text-sm fw-bold">Username</label>
+            <div class="login-form-username form-group" style="margin-bottom: 20px;">
                 <label for="username" class="sr-only">
                     {{^canloginbyemail}}
                         {{#str}} username {{/str}}
@@ -138,7 +134,8 @@
                 !}}{{#canloginbyemail}}{{#cleanstr}}usernameemail{{/cleanstr}}{{/canloginbyemail}}" {{!
                 !}}autocomplete="username">
             </div>
-            <div class="login-form-password form-group">
+            <label class="text-sm fw-bold">Password</label>
+            <div class="login-form-password form-group" style="margin-bottom: 20px;">
                 <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
                 <input type="password" name="password" id="password" value="" {{!
                 !}}class="form-control form-control-lg" {{!
@@ -150,40 +147,24 @@
                     {{{recaptcha}}}
                 </div>
             {{/recaptcha}}
-            <div class="login-form-submit form-group">
-                <button class="btn btn-primary btn-block btn-lg" type="submit" id="loginbtn">{{#str}}login{{/str}}</button>
+            <div class="login-form-submit form-group" style="margin-bottom: 20px;">
+                <button class="btn btn-primary btn-block btn-lg" type="submit" id="loginbtn">Sign In</button>
             </div>
-            <div class="login-form-forgotpassword form-group text-center">
-                <a href="{{forgotpasswordurl}}">{{#str}}forgotaccount{{/str}}</a>
+            <div >
+                <hr class="hr" />
             </div>
+            <button class="google-btn d-flex align-items-center">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZmlsbD0iI0VBNDMzNSIgZD0iTTI0IDkuNWMzLjU0IDAgNi43MSAxLjIyIDkuMjEgMy42bDYuODUtNi44NUMzNS45IDIuMzggMzAuNDcgMCAyNCAwIDEyLjA4IDAgMi4zMSA2LjkzLjQxIDE2LjdsNy45OCA2LjE5QzEwLjI2IDEzLjggMTYuNTQgOS41IDI0IDkuNXoiPjwvcGF0aD48cGF0aCBmaWxsPSIjMzRBODUzIiBkPSJNNDYuOTggMjQuNTVjMC0xLjU3LS4xNS0zLjA5LS4zOC00LjU1SDI0djkuMDJoMTIuOTRjLS41OCAyLjk2LTIuMjYgNS40OC00Ljc4IDcuMThsNy43MyA2YzQuNTEtNC4xOCA3LjA5LTEwLjM2IDcuMDktMTcuNjV6Ij48L3BhdGg+PHBhdGggZmlsbD0iI0ZCQkMwNSIgZD0iTTEwLjUzIDI4LjU5Yy0uNDgtMS40NS0uNzYtMi45OS0uNzYtNC41OXMuMjctMy4xNC43Ni00LjU5bC03Ljk4LTYuMTlDLjkyIDE2LjQ2IDAgMjAuMTIgMCAyNGMwIDMuODguOTIgNy41NCAyLjU2IDEwLjc4bDcuOTctNi4xOXoiPjwvcGF0aD48cGF0aCBmaWxsPSIjNDI4NUY0IiBkPSJNMjQgNDhjNi40OCAwIDExLjkzLTIuMTMgMTUuODktNS44MWwtNy43My02Yy0yLjE1IDEuNDUtNC45MiAyLjMtOC4xNiAyLjMtNy40NiAwLTEzLjc0LTQuOC0xNS40MS0xMS44N2wtNy45OCA2LjE5QzYuNjkgNDEuMDYgMTQuNjIgNDggMjQgNDh6Ij48L3BhdGg+PC9zdmc+" 
+                            alt="Google logo" class="google-icon">
+                <span class="btn-text">Sign in with Google</span>
+            </button>
+
             {{#cansignup}}
                 <div class="login-signup text-center">
                     {{#str}}donthaveanaccount, theme_moove{{/str}} <a href="{{signupurl}}">{{#str}}startsignup{{/str}}</a>
                 </div>
             {{/cansignup}}
         </form>
-        {{^hastwocolumns}}
-            {{#canloginasguest}}
-                <form action="{{loginurl}}" method="post" id="guestlogin" class="mt-2">
-                    <input type="hidden" name="logintoken" value="{{logintoken}}">
-                    <input type="hidden" name="username" value="guest" />
-                    <input type="hidden" name="password" value="guest" />
-                    <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
-                </form>
-            {{/canloginasguest}}
-            <div class="d-flex mt-2">
-                {{#languagemenu}}
-                    <div class="login-languagemenu">
-                        {{>core/action_menu}}
-                    </div>
-                {{/languagemenu}}
-                <button type="button" class="ml-auto btn btn-link" {{!
-                }} data-modal="alert"{{!
-                }} data-modal-title-str='["cookiesenabled", "core"]' {{!
-                }} data-modal-content-str='["cookiesenabled_help_html", "core"]'{{!
-                }}><i class="fa fa-question-circle"></i> {{#str}}cookiesnotice{{/str}}</button>
-            </div>
-        {{/hastwocolumns}}
     </div>
     {{#hastwocolumns}}
         <div class="col-lg-6 col-md-12 right-column">
