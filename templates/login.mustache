@@ -34,21 +34,14 @@
 <body {{{ bodyattributes }}}>
 {{> core/local/toast/wrapper}}
 
-<div id="page-wrapper">
+<div id="page-wrapper" style="display: flex; flex-direction: row; align-items: center; justify-content: center; background-color: #ffffff; padding: 24px;">
 
     {{{ output.standard_top_of_body_html }}}
 
-    <div id="page" class="container-fluid mt-0">
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-12">
-                <section id="region-main" class="col-12 h-100" aria-label="{{#str}}content{{/str}}">
-                    <div class="login-wrapper">
-                        <div class="login-container">
-                            {{{ output.main_content }}}
-                        </div>
-                    </div>
-                </section>
-            </div>
+    <div class="container-fluid mt-0" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+        <div class="col-md-6"><img src="theme/moove/pix/eko.png" class="img-fluid rounded" style="width: 100%;"></div>
+        <div id="page-content" class=" col-md-6 row" >
+            {{{ output.main_content }}}     
         </div>
     </div>
 </div>

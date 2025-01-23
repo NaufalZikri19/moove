@@ -92,7 +92,7 @@
         "languagemenu": "Choose language"
     }
 }}
-<div class="loginform row {{#hastwocolumns}}hastwocolumns{{/hastwocolumns}}">
+<div class="loginform row {{#hastwocolumns}}hastwocolumns{{/hastwocolumns}}" style="width: auto">
     <div class="{{#hastwocolumns}}col-lg-6 col-md-12 left-column{{/hastwocolumns}}{{^hastwocolumns}}col{{/hastwocolumns}}">
         <div class="text-center" style="margin-bottom: 48px;"> 
             <h2 class="text-sm fw-bold">Welcome, Knowledge Explorer👋</h2>
@@ -130,7 +130,7 @@
                 <input type="text" name="username" id="username" {{!
                 !}}class="form-control form-control-lg" {{!
                 !}}value="{{username}}" {{!
-                !}}placeholder="{{^canloginbyemail}}{{#cleanstr}}username{{/cleanstr}}{{/canloginbyemail}}{{!
+                !}}placeholder="{{^canloginbyemail}}Enter your username{{/canloginbyemail}}{{!
                 !}}{{#canloginbyemail}}{{#cleanstr}}usernameemail{{/cleanstr}}{{/canloginbyemail}}" {{!
                 !}}autocomplete="username">
             </div>
@@ -139,7 +139,7 @@
                 <label for="password" class="sr-only">{{#str}} password {{/str}}</label>
                 <input type="password" name="password" id="password" value="" {{!
                 !}}class="form-control form-control-lg" {{!
-                !}}placeholder="{{#cleanstr}}password{{/cleanstr}}" {{!
+                !}}placeholder="Enter your password" {{!
                 !}}autocomplete="current-password">
             </div>
             {{#recaptcha}}
@@ -150,7 +150,7 @@
             <div class="login-form-submit form-group" style="margin-bottom: 20px;">
                 <button class="btn btn-primary btn-block btn-lg" type="submit" id="loginbtn">Sign In</button>
             </div>
-            <div >
+            <div class="flex">
                 <hr class="hr" />
             </div>
             <button class="google-btn d-flex align-items-center">
@@ -187,14 +187,7 @@
                 {{#hasinstructions}}
                     {{{instructions}}}
                 {{/hasinstructions}}
-                {{#canloginasguest}}
-                    <form action="{{loginurl}}" method="post" id="guestlogin">
-                        <input type="hidden" name="logintoken" value="{{logintoken}}">
-                        <input type="hidden" name="username" value="guest" />
-                        <input type="hidden" name="password" value="guest" />
-                        <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
-                    </form>
-                {{/canloginasguest}}
+                
 
                 <div class="d-flex mt-2">
                     {{#languagemenu}}
